@@ -38,8 +38,25 @@ connect()()
 * Redux does not automatically detect a function returning an object that is an 'action'.
 * everytime you want to call an action creator from the connect you will pass it into the connect() function.  instead of calling it inside of the function method nested within the class component.
 
+* instead of receiving the entire props object, we will destructure out just the properties that we care about:
 
+```javascript
+const SongDetail = props => {...}
+//destructuring song property out of the Song object
+const SongDetail = ({ song }) => {...}
+```
 
+* `selectedSong` piece of state inside of the Redux store starts off as null
+
+* function called from the entire state object from redux:
+```javascript
+const mapStateToProps = (state) => {
+    //return an object that has the property count and the value
+    return { count: state.count }
+}
+```
+
+* [jsonPlaceholder API](http://jsonplaceholder.typicode.com/)
 
 ### Redux Project Structure:
 * /src
@@ -50,9 +67,6 @@ connect()()
 
 ## Webpack
 * joins different files together
-
-
-
 
 
 
